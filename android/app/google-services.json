@@ -14,7 +14,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "842008693647-gml8o077kf7kvib439tt6ukcrnjlbbvs.apps.googleusercontent.com",
+          "client_id": "842008693647-ang53mr8hib6kusmboqv54e9iaqstgmr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,8 +27,15 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "842008693647-gml8o077kf7kvib439tt6ukcrnjlbbvs.apps.googleusercontent.com",
+              "client_id": "842008693647-ang53mr8hib6kusmboqv54e9iaqstgmr.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "842008693647-h48o4e0kc7u7mbog8u735usjsjudpi1r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quizzApp"
+              }
             }
           ]
         }

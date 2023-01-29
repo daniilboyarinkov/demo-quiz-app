@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>CLIENT_ID</key>
-	<string>842008693647-h48o4e0kc7u7mbog8u735usjsjudpi1r.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.842008693647-h48o4e0kc7u7mbog8u735usjsjudpi1r</string>
-	<key>API_KEY</key>
-	<string>AIzaSyDi1c7B5dpvpj-FswDyFVJTOjV0QY54t5k</string>
-	<key>GCM_SENDER_ID</key>
-	<string>842008693647</string>
-	<key>PLIST_VERSION</key>
-	<string>1</string>
-	<key>BUNDLE_ID</key>
-	<string>com.example.quizzApp</string>
-	<key>PROJECT_ID</key>
-	<string>fir-quiz-app-3e0b9</string>
-	<key>STORAGE_BUCKET</key>
-	<string>fir-quiz-app-3e0b9.appspot.com</string>
-	<key>IS_ADS_ENABLED</key>
-	<false></false>
-	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
-	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
-	<key>IS_GCM_ENABLED</key>
-	<true></true>
-	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
-	<key>GOOGLE_APP_ID</key>
-	<string>1:842008693647:ios:c03d1151e5afe6980dd9fa</string>
-</dict>
+	<dict>
+		<key>CLIENT_ID</key>
+		<string>842008693647-h48o4e0kc7u7mbog8u735usjsjudpi1r.apps.googleusercontent.com</string>
+		<key>REVERSED_CLIENT_ID</key>
+		<string>com.googleusercontent.apps.842008693647-h48o4e0kc7u7mbog8u735usjsjudpi1r</string>
+		<key>API_KEY</key>
+		<string>AIzaSyDi1c7B5dpvpj-FswDyFVJTOjV0QY54t5k</string>
+		<key>GCM_SENDER_ID</key>
+		<string>842008693647</string>
+		<key>PLIST_VERSION</key>
+		<string>1</string>
+		<key>BUNDLE_ID</key>
+		<string>com.example.quizzApp</string>
+		<key>PROJECT_ID</key>
+		<string>fir-quiz-app-3e0b9</string>
+		<key>STORAGE_BUCKET</key>
+		<string>fir-quiz-app-3e0b9.appspot.com</string>
+		<key>IS_ADS_ENABLED</key>
+		<false></false>
+		<key>IS_ANALYTICS_ENABLED</key>
+		<false></false>
+		<key>IS_APPINVITE_ENABLED</key>
+		<true></true>
+		<key>IS_GCM_ENABLED</key>
+		<true></true>
+		<key>IS_SIGNIN_ENABLED</key>
+		<true></true>
+		<key>GOOGLE_APP_ID</key>
+		<string>1:842008693647:ios:c03d1151e5afe6980dd9fa</string>
+	</dict>
 </plist>

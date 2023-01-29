@@ -5,6 +5,7 @@ import 'package:quizz_app/screens/home_screen.dart';
 import 'package:quizz_app/screens/splash_screen.dart';
 
 import '../screens/introduction_screen.dart';
+import '../screens/login_screen.dart';
 
 class AppRoutes {
   static List<GetPage> routes() => [
@@ -17,5 +18,6 @@ class AppRoutes {
               Get.put(QuestionPaperController());
               Get.put(MyZoomDrawerController());
             })),
+        GetPage(name: "/login", page: () => const LoginScreen()),
       ];
 }
