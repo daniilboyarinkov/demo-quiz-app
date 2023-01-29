@@ -9,7 +9,7 @@ mixin SubThemeData {
       bodyText1: TextStyle(
         fontWeight: FontWeight.w400,
       ),
-      bodyText2: TextStyle(fontWeight: FontWeight.w200),
+      bodyText2: TextStyle(fontWeight: FontWeight.w400),
     ));
   }
 

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quizz_app/configs/themes/sub_theme_data_mixin.dart';
 
@@ -10,8 +9,10 @@ class LightTheme with SubThemeData {
   buildLightTheme() {
     final ThemeData systemLightTheme = ThemeData.light();
     return systemLightTheme.copyWith(
+      primaryColor: primaryLightColorLight,
       iconTheme: getIconTheme(),
       textTheme: getTextThemes().apply(
+        fontFamily: "sans-serif",
         bodyColor: mainTextColorLight,
         displayColor: mainTextColorLight,
       ),
