@@ -146,11 +146,11 @@ class QuestionsController extends GetxController {
   }
 
   void tryAgain() {
+    timer!.cancel();
+    questionIndex.value = 0;
     Get.find<QuestionPaperController>()
         .navigateToQuestions(paper: questionPaperModel, tryAgain: true);
   }
-
-  void saveTestResults() {}
 
   void navigateToHome() {
     timer!.cancel();

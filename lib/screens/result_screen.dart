@@ -64,7 +64,7 @@ class ResultScreen extends GetView<QuestionsController> {
                         shrinkWrap: true,
                         physics: const BouncingScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: Get.width ~/ 0.75,
+                          crossAxisCount: Get.width ~/ 75,
                           childAspectRatio: 1,
                           crossAxisSpacing: 8,
                           mainAxisSpacing: 8,
