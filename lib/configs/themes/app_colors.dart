@@ -5,6 +5,9 @@ import 'package:quizz_app/configs/themes/app_light_theme.dart';
 import 'package:quizz_app/configs/themes/ui_parameters.dart';
 
 const Color onSurfaceTextColor = Colors.white;
+const Color correctAnswerColor = Color(0xFF3ac3cb);
+const Color wrongAnswerColor = Color(0xFF851817);
+const Color notAnswerColor = Color(0xFF2a3c65);
 
 const mainGradientLight = LinearGradient(
     begin: Alignment.topLeft,

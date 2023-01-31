@@ -11,6 +11,7 @@ import 'package:quizz_app/configs/themes/custom_text_style.dart';
 import 'package:quizz_app/configs/themes/ui_parameters.dart';
 import 'package:quizz_app/controllers/questions_controller.dart';
 import 'package:quizz_app/firebase_ref/loading_status.dart';
+import 'package:quizz_app/screens/test_overview_screen.dart';
 
 import '../components/content_area.dart';
 
@@ -95,7 +96,7 @@ class QuestionsScreen extends GetView<QuestionsController> {
                   ),
                 ),
               ColoredBox(
-                color: Theme.of(context).scaffoldBackgroundColor,
+                color: Theme.of(context).secondaryHeaderColor,
                 child: Padding(
                   padding: UIParameters.mobileScreenPadding,
                   child: Row(children: [
@@ -117,20 +118,26 @@ class QuestionsScreen extends GetView<QuestionsController> {
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      width: 10,
+                    ),
                     Expanded(
                       child: Visibility(
-                        visible: controller.loadingStatus.value !=
+                        visible: controller.loadingStatus.value ==
                             LoadingStatus.completed,
                         child: MainButton(
                           onTap: () {
                             controller.isLastQuestion
-                                ? Container()
+                                ? Get.toNamed(TestOverviewScreen.routeName)
                                 : controller.nextQuestion();
                           },
                           title:
                               controller.isLastQuestion ? "Complete" : 'Next',
                         ),
                       ),
+                    ),
+                    const SizedBox(
+                      width: 10,
                     ),
                   ]),
                 ),

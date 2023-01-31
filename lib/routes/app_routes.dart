@@ -2,9 +2,12 @@ import 'package:get/get.dart';
 import 'package:quizz_app/controllers/question_paper/question_paper_controller.dart';
 import 'package:quizz_app/controllers/questions_controller.dart';
 import 'package:quizz_app/controllers/zoom_drawer_controller.dart';
+import 'package:quizz_app/screens/answer_check_screen.dart';
 import 'package:quizz_app/screens/home_screen.dart';
 import 'package:quizz_app/screens/question_screen.dart';
+import 'package:quizz_app/screens/result_screen.dart';
 import 'package:quizz_app/screens/splash_screen.dart';
+import 'package:quizz_app/screens/test_overview_screen.dart';
 
 import '../screens/introduction_screen.dart';
 import '../screens/login_screen.dart';
@@ -22,10 +25,17 @@ class AppRoutes {
             })),
         GetPage(name: LoginScreen.routeName, page: () => const LoginScreen()),
         GetPage(
+            name: TestOverviewScreen.routeName,
+            page: () => const TestOverviewScreen()),
+        GetPage(name: ResultScreen.routeName, page: () => const ResultScreen()),
+        GetPage(
+            name: AnswerCheckScreen.routeName,
+            page: () => const AnswerCheckScreen()),
+        GetPage(
           name: QuestionsScreen.routeName,
           page: () => const QuestionsScreen(),
           binding: BindingsBuilder(() {
-            Get.put(QuestionsController());
+            Get.put<QuestionsController>(QuestionsController());
           }),
         ),
       ];

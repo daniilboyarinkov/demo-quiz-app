@@ -1,11 +1,16 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:quizz_app/controllers/auth_controller.dart';
+import 'package:quizz_app/controllers/question_paper/question_paper_controller.dart';
 import 'package:quizz_app/firebase_ref/references.dart';
+import 'package:quizz_app/screens/result_screen.dart';
 
 import '../firebase_ref/loading_status.dart';
 import '../models/question_paper_model.dart';
+import '../screens/home_screen.dart';
 
 class QuestionsController extends GetxController {
   late QuestionPaperModel questionPaperModel;
@@ -82,7 +87,24 @@ class QuestionsController extends GetxController {
 
   void selectedAnswer(String? answer) {
     currentQuestion.value!.selectedAnswer = answer;
-    update(['answers_list']);
+    update(['answers_list', 'answer_review_list']);
+  }
+
+  String get completedTest {
+    final answered = allQuestions
+        .where((element) => element.selectedAnswer != null)
+        .toList()
+        .length;
+
+    return "$answered out of ${allQuestions.length} answered";
+  }
+
+  void jumpToQuestion(int index, {bool isGoBack = true}) {
+    questionIndex.value = index;
+    currentQuestion.value = allQuestions[index];
+    if (isGoBack) {
+      Get.back();
+    }
   }
 
   void nextQuestion() {
@@ -103,7 +125,7 @@ class QuestionsController extends GetxController {
     const duration = Duration(seconds: 1);
     remainSeconds = seconds;
 
-    Timer.periodic(duration, (Timer timer) {
+    timer = Timer.periodic(duration, (Timer timer) {
       if (remainSeconds == 0) {
         timer.cancel();
       } else {
@@ -116,5 +138,22 @@ class QuestionsController extends GetxController {
         remainSeconds--;
       }
     });
+  }
+
+  void complete() {
+    timer!.cancel();
+    Get.offAndToNamed(ResultScreen.routeName);
+  }
+
+  void tryAgain() {
+    Get.find<QuestionPaperController>()
+        .navigateToQuestions(paper: questionPaperModel, tryAgain: true);
+  }
+
+  void saveTestResults() {}
+
+  void navigateToHome() {
+    timer!.cancel();
+    Get.offNamedUntil(HomeScreen.routeName, (route) => false);
   }
 }
