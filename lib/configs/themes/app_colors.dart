@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:quizz_app/configs/themes/app_dark_theme.dart';
 import 'package:quizz_app/configs/themes/app_light_theme.dart';
 import 'package:quizz_app/configs/themes/ui_parameters.dart';
@@ -27,3 +28,11 @@ LinearGradient mainGradient() =>
 Color customScaffoldColor(BuildContext context) => UIParameters.isDarkMode()
     ? const Color(0xFF2e3c62)
     : const Color.fromARGB(255, 240, 237, 255);
+
+Color answerSelectedColor() => UIParameters.isDarkMode()
+    ? Theme.of(Get.context!).cardColor.withOpacity(0.5)
+    : Theme.of(Get.context!).primaryColor;
+
+Color answerBorerColor() => UIParameters.isDarkMode()
+    ? const Color.fromARGB(255, 20, 26, 158)
+    : const Color.fromARGB(255, 221, 221, 221);

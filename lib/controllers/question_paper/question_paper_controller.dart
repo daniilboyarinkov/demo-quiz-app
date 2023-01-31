@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:quizz_app/controllers/auth_controller.dart';
 import 'package:quizz_app/firebase_ref/references.dart';
 import 'package:quizz_app/models/question_paper_model.dart';
+import 'package:quizz_app/screens/question_screen.dart';
 import 'package:quizz_app/services/firebase_storage_service.dart';
 
 class QuestionPaperController extends GetxController {
@@ -46,16 +47,16 @@ class QuestionPaperController extends GetxController {
 
   void navigateToQuestions(
       {required QuestionPaperModel paper, bool tryAgain = false}) {
-    AuthController _authController = Get.find();
-    if (_authController.isLoggedIn()) {
+    AuthController authController = Get.find();
+    if (authController.isLoggedIn()) {
       if (tryAgain) {
         Get.back();
         // Get.offNamed();
       } else {
-        // Get.toNamed();
+        Get.toNamed(QuestionsScreen.routeName, arguments: paper);
       }
     } else {
-      _authController.showLoginAlertDialogue();
+      authController.showLoginAlertDialogue();
     }
   }
 }
