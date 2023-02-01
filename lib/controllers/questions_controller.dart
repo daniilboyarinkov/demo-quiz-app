@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:quizz_app/controllers/auth_controller.dart';
 import 'package:quizz_app/controllers/question_paper/question_paper_controller.dart';
 import 'package:quizz_app/firebase_ref/references.dart';
 import 'package:quizz_app/screens/result_screen.dart';
@@ -68,7 +67,9 @@ class QuestionsController extends GetxController {
         question.answers = answers;
       }
     } catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
 
     if (questionPaper.questions != null &&

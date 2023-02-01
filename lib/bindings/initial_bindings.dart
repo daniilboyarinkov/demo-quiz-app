@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:quizz_app/controllers/auth_controller.dart';
 import 'package:quizz_app/controllers/theme_controller.dart';
@@ -9,9 +8,9 @@ class InitialBindings implements Bindings {
   @override
   void dependencies() {
     Get.put(ThemeController());
+    // uncomment in order to upload new papers
     //Get.put(PapersDataUploader());
     Get.put(AuthController(), permanent: true);
-    // Get.put(NotificationService());
     Get.lazyPut(() => FireBaseStorageService());
   }
 }

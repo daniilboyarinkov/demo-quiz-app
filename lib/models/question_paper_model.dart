@@ -49,7 +49,7 @@ class QuestionPaperModel {
   String timeInMinutes() => '${(timeSeconds! / 60).ceil()} mins';
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['title'] = title;
     data['image_url'] = imageUrl;
@@ -89,7 +89,7 @@ class Questions {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['question'] = question;
     if (answers != null) {
@@ -117,7 +117,7 @@ class Answers {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['identifier'] = identifier;
     data['answer'] = answer;
     return data;

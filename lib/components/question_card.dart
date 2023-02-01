@@ -44,12 +44,6 @@ class QuestionCard extends GetView<QuestionPaperController> {
                       child: SizedBox(
                         width: Get.width * 0.15,
                         height: Get.width * 0.15,
-                        // child: FadeInImage(
-                        //   image: NetworkImage(
-                        //       _questionPaperController.allPapers[index].imageUrl!),
-                        //   placeholder:
-                        //       const AssetImage("assets/images/app_splash_logo.png"),
-                        // ),
                         child: CachedNetworkImage(
                           imageUrl: model.imageUrl!,
                           placeholder: ((context, url) => Container(

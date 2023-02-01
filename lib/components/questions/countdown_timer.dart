@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quizz_app/configs/themes/custom_text_style.dart';
 

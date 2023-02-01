@@ -36,7 +36,7 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
               slideWidth: MediaQuery.of(context).size.width * 0.8,
               // openCurve: Curves.fastOutSlowIn,
               // closeCurve: Curves.bounceIn,
-              menuScreen: MyMenuScreen(),
+              menuScreen: const MyMenuScreen(),
               mainScreen: Container(
                 decoration: BoxDecoration(gradient: mainGradient()),
                 child: SafeArea(
@@ -49,8 +49,8 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             AppCircleButton(
-                              child: Icon(AppIcons.menuLeft),
                               onTap: controller.toggleDrawer,
+                              child: const Icon(AppIcons.menuLeft),
                             ),
                             const SizedBox(
                               height: 10.0,

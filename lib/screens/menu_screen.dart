@@ -15,9 +15,9 @@ class MyMenuScreen extends GetView<MyZoomDrawerController> {
       decoration: BoxDecoration(gradient: mainGradient()),
       child: Theme(
         data: ThemeData(
-            textButtonTheme: TextButtonThemeData(
-                style:
-                    TextButton.styleFrom(foregroundColor: onSurfaceTextColor))),
+          textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(foregroundColor: onSurfaceTextColor)),
+        ),
         child: SafeArea(
           child: Stack(
             children: [
@@ -82,8 +82,7 @@ class _DrawButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback? onPressed;
 
-  const _DrawButton(
-      {super.key, required this.label, required this.icon, this.onPressed});
+  const _DrawButton({required this.label, required this.icon, this.onPressed});
 
   @override
   Widget build(BuildContext context) {

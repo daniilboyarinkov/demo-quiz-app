@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:quizz_app/controllers/auth_controller.dart';
 import 'package:quizz_app/firebase_ref/references.dart';
@@ -17,12 +18,13 @@ class QuestionPaperController extends GetxController {
   }
 
   Future<void> getAllPapers() async {
-    List<String> imgName = [
-      "biology",
-      "chemistry",
-      "maths",
-      "physics",
-    ];
+    // Do we really need this?
+    // List<String> imgName = [
+    //   "biology",
+    //   "chemistry",
+    //   "maths",
+    //   "physics",
+    // ];
 
     try {
       QuerySnapshot<Map<String, dynamic>> data = await questionPaperRF.get();
@@ -41,7 +43,9 @@ class QuestionPaperController extends GetxController {
       }
       allPapers.assignAll(paperList);
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 

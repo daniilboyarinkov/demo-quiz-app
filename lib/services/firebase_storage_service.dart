@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 import '../firebase_ref/references.dart';
@@ -14,7 +15,9 @@ class FireBaseStorageService extends GetxService {
       var imgUrl = await urlRef.getDownloadURL();
       return imgUrl;
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
       return null;
     }
   }

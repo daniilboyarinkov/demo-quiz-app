@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:quizz_app/firebase_ref/references.dart';
@@ -43,7 +44,9 @@ class AuthController extends GetxController {
         navigateToHomePage();
       }
     } on Exception catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
@@ -64,7 +67,9 @@ class AuthController extends GetxController {
       await _auth.signOut();
       navigateToHomePage();
     } on FirebaseAuthException catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
