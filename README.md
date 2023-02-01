@@ -5,6 +5,7 @@
 - интеграция с FireBase
 - вход через гугл аккаунт
 - Getx (State Manager)
+- Светлая и тёмная темы
 
 
 Картиночки: 
@@ -35,6 +36,13 @@ Test Result:
 
 <img width="320" alt="test-result-screen" src="https://user-images.githubusercontent.com/89917619/216038680-9dc4092c-86cd-4415-996f-78ab980e2ce4.jpg" />
 
+
+Video Presentation: 
+
+https://user-images.githubusercontent.com/89917619/216042613-d677c8bb-d46d-4754-b2b5-74df9cf6c9cc.mp4
+
+
+https://user-images.githubusercontent.com/89917619/216042628-1c7b7ed4-b8d0-4700-8de9-02951f5accc1.mp4
 
 
 
