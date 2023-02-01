@@ -38,6 +38,9 @@ class AnswerCheckScreen extends GetView<QuestionsController> {
                     padding: const EdgeInsets.only(top: 20.0),
                     child: Column(children: [
                       Text(controller.currentQuestion.value!.question!),
+                      const SizedBox(
+                        height: 32.0,
+                      ),
                       GetBuilder<QuestionsController>(
                           id: "answer_review_list",
                           builder: (_) {

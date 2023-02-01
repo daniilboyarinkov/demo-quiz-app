@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quizz_app/configs/themes/app_colors.dart';
+import 'package:quizz_app/configs/themes/app_dark_theme.dart';
 import 'package:quizz_app/configs/themes/ui_parameters.dart';
 import 'package:quizz_app/controllers/zoom_drawer_controller.dart';
+
+import '../configs/constants.dart';
 
 class MyMenuScreen extends GetView<MyZoomDrawerController> {
   const MyMenuScreen({super.key});
@@ -12,7 +15,11 @@ class MyMenuScreen extends GetView<MyZoomDrawerController> {
     return Container(
       padding: UIParameters.mobileScreenPadding,
       width: double.maxFinite,
-      decoration: BoxDecoration(gradient: mainGradient()),
+      decoration: BoxDecoration(
+          gradient: mainGradient(),
+          borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(cardBorderRadius),
+              topRight: Radius.circular(cardBorderRadius))),
       child: Theme(
         data: ThemeData(
           textButtonTheme: TextButtonThemeData(
@@ -36,6 +43,30 @@ class MyMenuScreen extends GetView<MyZoomDrawerController> {
                     right: MediaQuery.of(context).size.width * 0.3),
                 child: Column(
                   children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Obx(
+                        () => controller.user.value == null
+                            ? CircleAvatar(
+                                radius: 32.0,
+                                backgroundColor: Colors.white,
+                                child: Text(
+                                  'UN',
+                                  style: TextStyle(
+                                      color: Theme.of(context).primaryColor),
+                                ),
+                              )
+                            : CircleAvatar(
+                                radius: 32.0,
+                                backgroundImage: NetworkImage(
+                                    controller.user.value!.photoURL ??
+                                        defaultProfilePicture),
+                              ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 24.0,
+                    ),
                     Obx(
                       () => controller.user.value == null
                           ? const SizedBox()
@@ -49,7 +80,7 @@ class MyMenuScreen extends GetView<MyZoomDrawerController> {
                     ),
                     const Spacer(flex: 1),
                     _DrawButton(
-                      label: "Website",
+                      label: "Github",
                       icon: Icons.web,
                       onPressed: () => controller.webSite(),
                     ),
@@ -62,7 +93,7 @@ class MyMenuScreen extends GetView<MyZoomDrawerController> {
                       flex: 4,
                     ),
                     _DrawButton(
-                      label: "logout",
+                      label: "выйти",
                       icon: Icons.logout,
                       onPressed: () => controller.signOut(),
                     ),

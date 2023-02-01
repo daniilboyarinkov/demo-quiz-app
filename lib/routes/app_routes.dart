@@ -25,9 +25,16 @@ class AppRoutes {
             })),
         GetPage(name: LoginScreen.routeName, page: () => const LoginScreen()),
         GetPage(
-            name: TestOverviewScreen.routeName,
-            page: () => const TestOverviewScreen()),
-        GetPage(name: ResultScreen.routeName, page: () => const ResultScreen()),
+          name: TestOverviewScreen.routeName,
+          page: () => const TestOverviewScreen(),
+        ),
+        GetPage(
+          name: ResultScreen.routeName,
+          page: () => const ResultScreen(),
+          binding: BindingsBuilder(() {
+            Get.put<QuestionsController>(QuestionsController());
+          }),
+        ),
         GetPage(
             name: AnswerCheckScreen.routeName,
             page: () => const AnswerCheckScreen()),

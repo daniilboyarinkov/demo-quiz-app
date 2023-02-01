@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quizz_app/configs/themes/sub_theme_data_mixin.dart';
 
-const Color primaryLightColorLight = Color(0xFF3ac3cb);
-const Color primaryColorLight = Color(0xFFf85187);
-const Color mainTextColorLight = Color.fromARGB(255, 21, 21, 21);
+const Color primaryLightColorLight = Color(0xFF5A7D7C);
+const Color primaryColorLight = Color(0xFFDADFF7);
+const Color mainTextColorLight = Color(0xFF232C33);
 
 class LightTheme with SubThemeData {
   buildLightTheme() {

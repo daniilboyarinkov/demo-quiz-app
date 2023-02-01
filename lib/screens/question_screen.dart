@@ -20,8 +20,6 @@ class QuestionsScreen extends GetView<QuestionsController> {
 
   static const String routeName = "/questions";
 
-  get questionTS => null;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,10 +28,13 @@ class QuestionsScreen extends GetView<QuestionsController> {
         leading: Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: const ShapeDecoration(
-              shape: StadiumBorder(
-                  side: BorderSide(color: onSurfaceTextColor, width: 2))),
-          child: Obx(() => CountdownTimer(
-              time: controller.time.value, color: onSurfaceTextColor)),
+            shape: StadiumBorder(
+                side: BorderSide(color: onSurfaceTextColor, width: 2)),
+          ),
+          child: Obx(
+            () => CountdownTimer(
+                time: controller.time.value, color: onSurfaceTextColor),
+          ),
         ),
         titleWidget: Obx(
           () => Text(

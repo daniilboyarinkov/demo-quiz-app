@@ -9,24 +9,20 @@ const Color correctAnswerColor = Color(0xFF3ac3cb);
 const Color wrongAnswerColor = Color(0xFF851817);
 const Color notAnswerColor = Color(0xFF2a3c65);
 
-const mainGradientLight = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [
-      primaryLightColorLight,
-      primaryColorLight,
-    ]);
+LinearGradient mainGradient() {
+  final colors = UIParameters.isDarkMode()
+      ? [
+          primaryDarkColorDark,
+          primaryColorDark,
+        ]
+      : [
+          primaryLightColorLight,
+          primaryColorLight,
+        ];
 
-const mainGradientDark = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [
-      primaryDarkColorDark,
-      primaryColorDark,
-    ]);
-
-LinearGradient mainGradient() =>
-    UIParameters.isDarkMode() ? mainGradientDark : mainGradientLight;
+  return LinearGradient(
+      begin: Alignment.topLeft, end: Alignment.bottomRight, colors: colors);
+}
 
 Color customScaffoldColor(BuildContext context) => UIParameters.isDarkMode()
     ? const Color(0xFF2e3c62)

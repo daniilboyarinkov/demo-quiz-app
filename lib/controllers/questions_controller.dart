@@ -128,7 +128,7 @@ class QuestionsController extends GetxController {
 
     timer = Timer.periodic(duration, (Timer timer) {
       if (remainSeconds == 0) {
-        timer.cancel();
+        complete();
       } else {
         int minutes = remainSeconds ~/ 60;
         int seconds = remainSeconds % 60;

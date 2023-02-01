@@ -25,12 +25,13 @@ class LoginScreen extends GetView<AuthController> {
           ),
           const Padding(
             padding: EdgeInsets.all(32.0),
-            child: Text("This is a study quiz app.",
-                style: TextStyle(
-                  color: onSurfaceTextColor,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center),
+            child:
+                Text("Это quiz app. Представляете? \nСам до сих пор не верю...",
+                    style: TextStyle(
+                      color: onSurfaceTextColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center),
           ),
           MainButton(
             onTap: () {

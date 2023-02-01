@@ -16,12 +16,22 @@ class Dialogs {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           Text(
-            "Hi",
+            "Привет",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
+          SizedBox(
+            height: 20,
+          ),
           Text(
-            "Please log in before you start...",
+            "Чтобы продолжить нужно авторизоваться...",
             style: TextStyle(fontSize: 16),
+          ),
+          SizedBox(
+            height: 12,
+          ),
+          Text(
+            "Это быстро. Правда",
+            style: TextStyle(fontSize: 10),
           ),
         ],
       ),

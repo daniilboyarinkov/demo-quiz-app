@@ -6,6 +6,7 @@ import 'package:quizz_app/components/content_area.dart';
 import 'package:quizz_app/components/custom_app_bar.dart';
 import 'package:quizz_app/components/question_number_card.dart';
 import 'package:quizz_app/components/questions/answer_card.dart';
+import 'package:quizz_app/configs/themes/app_colors.dart';
 import 'package:quizz_app/configs/themes/custom_text_style.dart';
 import 'package:quizz_app/configs/themes/ui_parameters.dart';
 import 'package:quizz_app/controllers/questions_controller_ext.dart';
@@ -42,17 +43,17 @@ class ResultScreen extends GetView<QuestionsController> {
                   Padding(
                     padding: const EdgeInsets.only(top: 20.0, bottom: 5.0),
                     child: Text(
-                      "Congratulations",
+                      "Вот это да",
                       style: headerText.copyWith(color: textColor),
                     ),
                   ),
-                  Text("You have ${controller.points} points.",
+                  Text("У вас ${controller.points} баллов.",
                       style: TextStyle(color: textColor)),
                   const SizedBox(
                     height: 25.0,
                   ),
                   const Text(
-                    "Tap below question numbers to view correct answers",
+                    "Тык, чтобы увидеть правильный ответ",
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(
@@ -86,7 +87,7 @@ class ResultScreen extends GetView<QuestionsController> {
                           }
 
                           return QuestionNumberCard(
-                              index: index,
+                              index: index + 1,
                               status: status,
                               onTap: () {
                                 controller.jumpToQuestion(index,
@@ -109,8 +110,8 @@ class ResultScreen extends GetView<QuestionsController> {
                     onTap: () {
                       controller.tryAgain();
                     },
-                    color: Colors.blueGrey,
-                    title: "Try again",
+                    color: onSurfaceTextColor,
+                    title: "Исправить",
                   ),
                 ),
                 const SizedBox(
@@ -121,8 +122,8 @@ class ResultScreen extends GetView<QuestionsController> {
                     onTap: () {
                       controller.saveTestResults();
                     },
-                    color: Colors.blueGrey,
-                    title: "Go home",
+                    color: onSurfaceTextColor,
+                    title: "Домой",
                   ),
                 ),
               ]),

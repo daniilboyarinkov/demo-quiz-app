@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// uncomment to upload new papers
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
 //   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);

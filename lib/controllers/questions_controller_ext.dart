@@ -12,7 +12,7 @@ extension QuestionsControllerExtension on QuestionsController {
       .length;
 
   String get correctAnsweredQuestions {
-    return '$correctQuestionCount out of ${allQuestions.length} are correct';
+    return '$correctQuestionCount из ${allQuestions.length} правильно';
   }
 
   String get points {

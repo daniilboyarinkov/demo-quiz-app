@@ -48,29 +48,34 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            AppCircleButton(
-                              onTap: controller.toggleDrawer,
-                              child: const Icon(AppIcons.menuLeft),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                AppCircleButton(
+                                  onTap: controller.toggleDrawer,
+                                  child: const Icon(AppIcons.menuLeft),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 10.0),
+                                  child: Row(
+                                    children: [
+                                      const Icon(AppIcons.peace),
+                                      Text(
+                                        "Hello ${controller.user.value?.displayName?.split(" ")[0] ?? "friend"}",
+                                        style: detailText.copyWith(
+                                            color: onSurfaceTextColor),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
                             const SizedBox(
                               height: 10.0,
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 10.0),
-                              child: Row(
-                                children: [
-                                  const Icon(AppIcons.peace),
-                                  Text(
-                                    "Hello friend",
-                                    style: detailText.copyWith(
-                                        color: onSurfaceTextColor),
-                                  ),
-                                ],
-                              ),
-                            ),
                             Text(
-                              "What do you want to learn today?",
+                              "Что узнаем сегодня?",
                               style: headerText.copyWith(
                                   color: onSurfaceTextColor),
                             )
